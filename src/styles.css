@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-form-field {
+    width: 100%;
+}
+
+.app-flex-container {
+    display: flex;
+    justify-content: space-between
+}
+
+.app-primary {
+    color: #3f51b5;
+}
+
+.app-accent {
+    color: #ff4081;
+}
+
+.app-warn {
+    color: #f44336;
+}
+
+table {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.app-cursor {
+    cursor: pointer;
+}

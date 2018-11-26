@@ -1,0 +1,41 @@
+<mat-form-field *ngIf="!organization">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1">
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header width="15%"> ID </th>
+        <td mat-cell *matCellDef="let element" class='app-primary'>
+            {{element.id}}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ownerAddress">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header width="35%"> Owner Address </th>
+        <td mat-cell *matCellDef="let element" class='app-primary'>
+            {{element.ownerAddress}}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header width="35%"> Name </th>
+        <td mat-cell *matCellDef="let element" class='app-primary'>
+            {{element.name}}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="donation">
+        <th mat-header-cell *matHeaderCellDef width="15%"> </th>
+        <td mat-cell *matCellDef="let element">
+            <a mat-stroked-button color="primary" routerLink="/organization-donation/{{element.id}}">
+                <mat-icon aria-label="Donate">monetization_on</mat-icon>
+                Donate
+            </a>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>

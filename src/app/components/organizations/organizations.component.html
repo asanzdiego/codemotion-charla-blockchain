@@ -1,0 +1,46 @@
+<div class="app-flex-container">
+    <div>
+        <h2>Organizations</h2>
+    </div>
+    <div *ngIf="canCreate">
+        <a mat-fab routerLink="/organization-add">
+            <mat-icon aria-label="Add organization">add</mat-icon>
+        </a>
+    </div>
+</div>
+
+<mat-card *ngIf="error">
+    <div class="app-accent">{{error}}</div>
+</mat-card>
+
+<div *ngIf="!error">
+
+    <div *ngIf="isLoadingOrganization">
+        <mat-spinner></mat-spinner> Loading user organization...
+    </div>
+
+    <div *ngIf="!isLoadingOrganization">
+
+        <div *ngIf="organization">
+            <h3>My organization (as owner)</h3>
+            <app-organizations-table [organization]="organization"></app-organizations-table>
+            <h3>Other organizations</h3>
+        </div>
+
+        <div *ngIf="isLoadingOrganizations">
+            <mat-spinner></mat-spinner> Loading other organizations...
+        </div>
+
+        <div *ngIf="!isLoadingOrganizations">
+
+            <app-organizations-table *ngIf="organizations && organizations.length > 0" [organizations]="organizations"></app-organizations-table>
+
+            <mat-card *ngIf="!(organizations && organizations.length > 0)">
+                <div class="app-accent">No organizations found.</div>
+            </mat-card>
+
+        </div>
+
+    </div>
+
+</div>

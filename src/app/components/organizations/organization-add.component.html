@@ -1,0 +1,58 @@
+<div class="app-flex-container">
+    <div>
+        <h2>New organization</h2>
+    </div>
+</div>
+
+<mat-card *ngIf="error">
+    <div class="app-accent">{{error}}</div>
+</mat-card>
+
+<mat-card *ngIf="message">
+    <div class="app-primary">{{message}}</div>
+</mat-card>
+
+<div *ngIf="!(error || message)">
+
+    <div *ngIf="isLoading">
+        <mat-spinner></mat-spinner> Loading...
+    </div>
+
+    <div *ngIf="!isLoading">
+
+        <div *ngIf="isCreating">
+            <mat-spinner></mat-spinner> Creating organization...
+        </div>
+        <div *ngIf="!isCreating">
+            <mat-form-field>
+                <input [(ngModel)]="organization.ownerAddress" matInput placeholder="Owner address" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input [(ngModel)]="organization.name" matInput placeholder="Name">
+            </mat-form-field>
+        </div>
+
+    </div>
+
+</div>
+
+<br />
+
+<div class="app-flex-container">
+    <div>
+        &nbsp;
+        <br />
+    </div>
+    <div>
+        <a mat-button routerLink="/organizations">
+            <mat-icon aria-label="Cancel">arrow_back</mat-icon>
+            Return
+        </a>
+        &nbsp;
+        <button mat-raised-button color="accent" (click)="create()" *ngIf="!error && !message && !isCreating" [disabled]="!organization.ownerAddress || !organization.name">
+            <mat-icon aria-label="Save">save</mat-icon>
+            Save
+        </button>
+    </div>
+</div>

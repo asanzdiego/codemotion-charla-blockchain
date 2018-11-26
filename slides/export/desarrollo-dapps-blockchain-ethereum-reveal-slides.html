@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="pandoc">
+  <meta name="description" content="Cómo desarrollar aplicaciones descentralizadas en la Blockchain de Etheruem" />
+  <meta name="author" content="Adolfo Sanz De Diego">
+  <title>Cómo desarrollar aplicaciones descentralizadas en la Blockchain de Etheruem</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../lib/reveal.js-menu/menu.css">
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="../lib/reveal.js/css/theme/beige.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="../lib/reveal.js/lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal.js/css/print/pdf.css' : '../lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+  <style type="text/css">
+    body {
+      background: white !important;
+      background-color: white !important;
+    }
+    code{
+      white-space: pre;
+    }
+    .reveal pre code {
+      background: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
+    }
+    .reveal section img {
+      margin: 15px 0px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    strong {
+      color: #777
+    }
+    a:hover {
+      text-decoration: underline !important;
+    }
+    h1.title {
+      font-size: 200% !important;
+    }
+    h1 {
+      font-size: 200% !important;
+    }
+    h2 {
+      font-size: 150% !important;
+    }
+    h3 {
+      font-size: 100% !important;
+    }
+    @media print {
+      #only-print-parent { display: table !important; }
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
+      h1.title { font-size: 300% !important;}
+      h1 { font-size: 300% !important; }
+      h2 { font-size: 200% !important; }
+      h3 { font-size: 150% !important; }
+    }
+  </style>
+  <!--[if lt IE 9]>
+  <script src="../lib/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">Cómo desarrollar aplicaciones descentralizadas en la Blockchain de Etheruem</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date">Codemotion 2018</h3>
+    </div>
+</section>
+
+<section><section id="autor" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Autor</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
+<h2><span class="header-section-number">2.1</span> Adolfo Sanz De Diego</h2>
+<p>Asesor. Desarrollador. Profesor. Formador.</p>
+<ul>
+<li>Blog: <a href="https://www.asanzdiego.com/">asanzdiego.com</a></li>
+<li>Correo: <a href="mailto:asanzdiego@gmail.com">asanzdiego@gmail.com</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/">slideshare.net/asanzdiego</a></li>
+</ul>
+</section></section>
+<section><section id="indice" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Indice</h1></section><section id="qué-vamos-a-ver" class="slide level2">
+<h2><span class="header-section-number">3.1</span> ¿Qué vamos a ver?</h2>
+<ol type="1">
+<li class="fragment">Parte teorica</li>
+<li class="fragment">Descripción ÐApp</li>
+<li class="fragment">Creación Smart Contracts</li>
+<li class="fragment">Testing Smart Contracts</li>
+<li class="fragment">Creación UI</li>
+<li class="fragment">Subida a entornos de prueba</li>
+<li class="fragment">Resumen y conclusiones</li>
+</ol>
+</section></section>
+<section><section id="teoría" class="titleslide slide level1"><h1><span class="header-section-number">4</span> Teoría</h1></section><section id="qué-es-bitcoin" class="slide level2">
+<h2><span class="header-section-number">4.1</span> ¿Qué es Bitcoin?</h2>
+<ul>
+<li class="fragment"><strong>Protocolo y red P2P</strong> = dinero digital.</li>
+<li class="fragment"><strong>Claves privadas</strong> = transferir fondos.</li>
+<li class="fragment"><strong>Descentralizado</strong> = no necesitan un tercero.</li>
+</ul>
+</section><section id="qué-es-blockchain" class="slide level2">
+<h2><span class="header-section-number">4.2</span> ¿Qué es Blockchain?</h2>
+<ul>
+<li class="fragment">Datos se guardan en <strong>cadena de bloques</strong> con información del anterior.</li>
+<li class="fragment"><strong>Histórico transacciones</strong> difícilmente falsificable.</li>
+<li class="fragment">Transacciones verificadas <strong>de forma descentralizada</strong> ¿cómo?</li>
+</ul>
+</section><section id="qué-es-el-minado" class="slide level2">
+<h2><span class="header-section-number">4.3</span> ¿Qué es el Minado?</h2>
+<ul>
+<li class="fragment">Generación nuevos bloques.</li>
+<li class="fragment">Problema <strong>elegir el bloque correcto</strong> ¿cómo?</li>
+</ul>
+</section><section id="mecanismos-de-consenso" class="slide level2">
+<h2><span class="header-section-number">4.4</span> ¿Mecanismos de consenso?</h2>
+<ul>
+<li class="fragment"><strong>Prueba de trabajo o PoW</strong> = recompensa al primer minero en resolver problema gasto computacional elevado, pero verificación inmediata.
+<ul>
+<li class="fragment">Elevado gasto energético.</li>
+</ul></li>
+<li class="fragment"><strong>Prueba de participación o PoS</strong> = probabilidad de obtener recompensa proporcional a monedas acumuladas.
+<ul>
+<li class="fragment">Problemas en caso de una bifurcación de la cadena.</li>
+</ul></li>
+</ul>
+</section><section id="tipos-de-blockchains" class="slide level2">
+<h2><span class="header-section-number">4.5</span> ¿Tipos de Blockchains?</h2>
+<ul>
+<li class="fragment"><strong>públicas</strong>: cualquiera puede minar y las transacciones son públicas.</li>
+<li class="fragment"><strong>privadas</strong>: solo se puede minar por invitación y las transacciones solo las pueden ver los mineros.</li>
+<li class="fragment"><strong>mixtas</strong>: solo se puede minar por invitación pero las transacciones son públicas.</li>
+</ul>
+</section><section id="qué-es-ethereum" class="slide level2">
+<h2><span class="header-section-number">4.6</span> ¿Qué es Ethereum?</h2>
+<ul>
+<li class="fragment">Blockchain pública que <strong>ejecuta código y guarda datos</strong> de forma descentralizada.</li>
+<li class="fragment"><strong>Solidity</strong> = compila a bytecode interpreta Ethereum Virtual Machine (EVM).</li>
+<li class="fragment"><strong>Gas</strong> = coste ejecución en Ethers.</li>
+</ul>
+</section><section id="qué-es-un-smart-contract" class="slide level2">
+<h2><span class="header-section-number">4.7</span> ¿Qué es un Smart Contract?</h2>
+<ul>
+<li class="fragment">Programa informático en blockchain.
+<ul>
+<li class="fragment"><strong>Autónomo</strong>: no necesita ningún servidor.</li>
+<li class="fragment"><strong>Confiable</strong>: trazabilidad de los datos.</li>
+<li class="fragment"><strong>Imparable</strong>: ejecutarse siempre.</li>
+<li class="fragment"><strong>Inmutable</strong>: no se puede modificar.</li>
+<li class="fragment"><strong>Descentralizado</strong>: no necesita tercero para ser verificado.</li>
+</ul></li>
+</ul>
+</section><section id="apps-tradicionales" class="slide level2">
+<h2><span class="header-section-number">4.8</span> ¿Apps tradicionales?</h2>
+<figure>
+<img src="../img/apps-vs-dapps-bn.png" alt="Apps" text-align="center" style="width:50.0%" /><figcaption>Apps</figcaption>
+</figure>
+</section><section id="apps-descentralizadas" class="slide level2">
+<h2><span class="header-section-number">4.9</span> ¿Apps descentralizadas?</h2>
+<figure>
+<img src="../img/apps-vs-dapps.png" alt="Apps VS ÐApps" text-align="center" style="width:50.0%" /><figcaption>Apps VS ÐApps</figcaption>
+</figure>
+</section></section>
+<section><section id="descripción-ðapp" class="titleslide slide level1"><h1><span class="header-section-number">5</span> Descripción ÐApp</h1></section><section id="ðapp-de-donaciones-a-ong" class="slide level2">
+<h2><span class="header-section-number">5.1</span> ÐApp de donaciones a ONG</h2>
+<ul>
+<li class="fragment">Vamos a desarrollar una ÐApp para gestionar donaciones a ONG con 2 tipos de usuarios:
+<ul>
+<li class="fragment"><strong>Propietarios</strong>: crea la ONG y recibe las donaciones.</li>
+<li class="fragment"><strong>Otros usuarios</strong>: realizan donaciones a las ONG.</li>
+</ul></li>
+</ul>
+</section><section id="casos-de-uso" class="slide level2">
+<h2><span class="header-section-number">5.2</span> Casos de uso</h2>
+<figure>
+<img src="../img/dapp-de-donaciones-a-ONG.png" text-align="center" style="width:50.0%" />
+</figure>
+</section><section id="demo-rinkeby" class="slide level2">
+<h2><span class="header-section-number">5.3</span> Demo (Rinkeby)</h2>
+<ul>
+<li class="fragment">El back desplegado en la <strong>red de pruebas</strong> de <a href="https://www.rinkeby.io/">Rinkeby</a>.</li>
+<li class="fragment">El front desplegado en <strong>GitHub Pages</strong> (siendo puristas habría que usar <a href="https://ipfs.io/">IPFS</a>).
+<ul>
+<li class="fragment"><a href="https://nongovernmentalorganizations.github.io" class="uri">https://nongovernmentalorganizations.github.io</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="creación-smart-contracts" class="titleslide slide level1"><h1><span class="header-section-number">6</span> Creación Smart Contracts</h1></section><section id="entorno-de-desarrollo" class="slide level2">
+<h2><span class="header-section-number">6.1</span> ¿Entorno de desarrollo?</h2>
+<ul>
+<li class="fragment"><strong><a href="https://solidity-es.readthedocs.io/es/latest/">Solidity</a></strong>: lenguaje de programación.</li>
+<li class="fragment"><strong><a href="https://remix.ethereum.org/">Remix</a></strong>: IDE en un navegador.</li>
+<li class="fragment"><strong><a href="https://code.visualstudio.com/">Visual Studio Code</a></strong>: IDE Software Libre</li>
+<li class="fragment"><strong><a href="https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity">Plugin de Solidity de Juan Blanco</a></strong>: Plugin de Solidity para Visual Studio Code</li>
+</ul>
+</section><section id="cómo-guardar-datos" class="slide level2">
+<h2><span class="header-section-number">6.2</span> ¿Cómo guardar datos?</h2>
+<ul>
+<li class="fragment">Los datos se guardan en “structs” o <strong>estructuras</strong>.</li>
+<li class="fragment">Las estructuras de datos se guardan en <strong>arrays</strong>.</li>
+<li class="fragment">Para las relaciones se utilizan los <strong>mappings</strong>.</li>
+</ul>
+</section><section id="ejemplo" class="slide level2">
+<h2><span class="header-section-number">6.3</span> Ejemplo</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// Estructura</span>
+struct Organization <span class="op">{</span>
+    uint id<span class="op">;</span>
+    address owner<span class="op">;</span>
+    string name<span class="op">;</span>
+<span class="op">}</span>
+
+<span class="co">// Array</span>
+Organization[] <span class="kw">public</span> organizations<span class="op">;</span>
+
+<span class="co">// Mapping</span>
+<span class="at">mapping</span>(address <span class="op">=&gt;</span> uint) <span class="kw">public</span> ownerToOrganizationId<span class="op">;</span></code></pre></div>
+</section><section id="otros-elementos" class="slide level2">
+<h2><span class="header-section-number">6.4</span> ¿Otros elementos?</h2>
+<ul>
+<li class="fragment"><strong>constructores</strong> : solo se ejecutan cuando el contrato inteligente es desplegado en la blockchain.</li>
+<li class="fragment"><strong>eventos</strong>: permiten trazar lo que sucede en los contratos inteligentes.</li>
+<li class="fragment"><strong>modificadores personalizados</strong>: permiten hacer chequeos antes de ejecutar la lógica de una función.</li>
+</ul>
+</section><section id="ejemplo-1" class="slide level2">
+<h2><span class="header-section-number">6.5</span> Ejemplo</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// Constructor</span>
+<span class="at">constructor</span>() <span class="kw">public</span> <span class="op">{</span>
+    <span class="co">// to fix problem with nulls</span>
+    <span class="va">organizations</span>.<span class="at">push</span>(<span class="at">Organization</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="st">&quot;0&quot;</span>))<span class="op">;</span>
+<span class="op">}</span>
+
+<span class="co">// Eventos</span>
+event <span class="at">OrganizationCreated</span>(
+    uint indexed id<span class="op">,</span> address indexed owner<span class="op">,</span> string name)<span class="op">;</span>
+
+<span class="co">// Modificadores personalizados</span>
+modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
+    <span class="at">require</span>(ownerToOrganizationId[<span class="va">msg</span>.<span class="at">sender</span>] <span class="op">==</span> <span class="dv">0</span><span class="op">,</span> 
+    <span class="st">&quot;suplied owner already have an organization&quot;</span>)<span class="op">;</span>
+    _<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+</section><section id="modificadores-de-visibilidad" class="slide level2">
+<h2><span class="header-section-number">6.6</span> ¿Modificadores de visibilidad?</h2>
+<ul>
+<li class="fragment">Para variables de estado y para funciones:
+<ul>
+<li class="fragment"><strong>public</strong>: desde otros contratos y desde el propio contrato.</li>
+<li class="fragment"><strong>external</strong>: desde otros contratos pero no desde el propio contrato.</li>
+<li class="fragment"><strong>internal</strong>: desde el propio contrato o de contratos que hereden de él.</li>
+<li class="fragment"><strong>private</strong>: sólo desde el propio contrato.</li>
+</ul></li>
+</ul>
+</section><section id="otros-modificadores" class="slide level2">
+<h2><span class="header-section-number">6.7</span> ¿Otros modificadores?</h2>
+<ul>
+<li class="fragment">Para variables de estado:
+<ul>
+<li class="fragment"><strong>constant</strong>: pueden ser modificadas.</li>
+</ul></li>
+<li class="fragment">Para funciones:
+<ul>
+<li class="fragment"><strong>view</strong>: no pueden modificar ninguna variable de estado (no consumen Gas).</li>
+<li class="fragment"><strong>pure</strong>: no pueden ni ver ni modificar ninguna variable de estado (no consumen Gas).</li>
+<li class="fragment"><strong>payable</strong>: admiten envío de dinero.</li>
+</ul></li>
+</ul>
+</section><section id="ejemplo-2" class="slide level2">
+<h2><span class="header-section-number">6.8</span> Ejemplo</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">addOrganization</span>(string _name) external 
+    <span class="at">ownerNotExists</span>() <span class="op">{</span>
+    ...
+    emit <span class="at">OrganizationCreated</span>(organizationId<span class="op">,</span> <span class="va">msg</span>.<span class="at">sender</span><span class="op">,</span> _name)<span class="op">;</span>
+<span class="op">}</span>
+
+<span class="kw">function</span> <span class="at">donation</span>(uint _organizationId) external payable
+    <span class="at">ownerExists</span>(_organizationId) <span class="op">{</span>
+    ...
+    emit <span class="at">DonationSubmitted</span>(_organizationId<span class="op">,</span> owner<span class="op">,</span> <span class="va">msg</span>.<span class="at">sender</span><span class="op">,</span> <span class="va">msg</span>.<span class="at">value</span>)<span class="op">;</span>
+<span class="op">}</span>
+
+<span class="kw">function</span> <span class="at">getOrganizationsLength</span>() external view <span class="at">returns</span>(uint) <span class="op">{</span>
+
+    <span class="cf">return</span> <span class="va">organizations</span>.<span class="at">length</span><span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+<p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/contracts/NonGovernmentalOrganizations.sol">contracts/NonGovernmentalOrganizations.sol</a></p>
+</section><section id="comentarios-generales" class="slide level2">
+<h2><span class="header-section-number">6.9</span> ¿Comentarios generales?</h2>
+<ul>
+<li class="fragment">Muchas limitaciones, por eso reducir la lógica al mínimo.</li>
+<li class="fragment">Los bucles están muy desaconsejados (gas), por eso se usan los mappings.</li>
+<li class="fragment">La ejecución es lenta, por eso implementar políticas de cacheo.</li>
+<li class="fragment">Aspectos en proceso de mejora como tratamiento excepciones.</li>
+</ul>
+</section></section>
+<section><section id="testing-smart-contracts" class="titleslide slide level1"><h1><span class="header-section-number">7</span> Testing Smart Contracts</h1></section><section id="ganache" class="slide level2">
+<h2><span class="header-section-number">7.1</span> Ganache</h2>
+<ul>
+<li><a href="https://truffleframework.com/ganache">Ganache</a> es un <strong>nodo privado</strong> para desarrollar y testear sin coste.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># instalar</span>
+<span class="ex">npm</span> install -g ganache-cli</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># ejecutar</span>
+<span class="ex">ganache-cli</span> --gasLimit 7000001 --mnemonic <span class="st">&quot;</span><span class="va">$(</span><span class="fu">cat</span> wallet.mnemonic<span class="va">)</span><span class="st">&quot;</span></code></pre></div>
+</section><section id="truffle" class="slide level2">
+<h2><span class="header-section-number">7.2</span> Truffle</h2>
+<ul>
+<li><a href="https://truffleframework.com/">Truffle</a> es un <strong>framework de desarrollo</strong> de smarts contracts de Ethreum.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># instalar</span>
+<span class="ex">npm</span> install -g truffle</code></pre></div>
+</section><section id="compilar" class="slide level2">
+<h2><span class="header-section-number">7.3</span> Compilar</h2>
+<ul>
+<li>Una vez creado los smarts contracts hay que compilarlos:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># compilar</span>
+<span class="ex">truffle</span> compile</code></pre></div>
+</section><section id="migrar" class="slide level2">
+<h2><span class="header-section-number">7.4</span> Migrar</h2>
+<ul>
+<li>Una vez levantado el nodo privado (Ganache) en una terminal independiente, tenemos que migrar los smarts contracts compilados:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># migrar</span>
+<span class="ex">truffle</span> migrate</code></pre></div>
+</section><section id="tests" class="slide level2">
+<h2><span class="header-section-number">7.5</span> Tests</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> NonGovernmentalOrganizations <span class="op">=</span> artifacts
+    .<span class="at">require</span>(<span class="st">&quot;NonGovernmentalOrganizations&quot;</span>)<span class="op">;</span>
+<span class="at">contract</span>(<span class="st">&quot;NonGovernmentalOrganizations&quot;</span><span class="op">,</span> <span class="at">async</span> (accounts) <span class="op">=&gt;</span> <span class="op">{</span>
+    <span class="at">it</span>(<span class="st">&quot;addOrganization - ok&quot;</span><span class="op">,</span> <span class="at">async</span> () <span class="op">=&gt;</span> <span class="op">{</span>
+        <span class="kw">let</span> instance <span class="op">=</span> await <span class="va">NonGovernmentalOrganizations</span>.<span class="at">deployed</span>()<span class="op">;</span>
+        <span class="kw">let</span> tx <span class="op">=</span> await <span class="va">instance</span>.<span class="at">addOrganization</span>(expectedName<span class="op">,</span>
+            <span class="op">{</span> <span class="dt">from</span><span class="op">:</span> expectedOwner <span class="op">}</span>)<span class="op">;</span>
+        <span class="va">assert</span>.<span class="at">equal</span>(<span class="va">tx</span>.<span class="at">logs</span>[<span class="dv">0</span>].<span class="at">event</span><span class="op">,</span> <span class="st">&quot;OrganizationCreated&quot;</span>)<span class="op">;</span>
+        <span class="kw">let</span> result <span class="op">=</span> await <span class="va">instance</span>.<span class="va">organizations</span>.<span class="at">call</span>(expectedId)<span class="op">;</span>
+        <span class="va">assert</span>.<span class="at">equal</span>(result[<span class="dv">2</span>]<span class="op">,</span> expectedName)<span class="op">;</span>
+        <span class="kw">let</span> ownerId <span class="op">=</span> await <span class="va">instance</span>.<span class="at">ownerToOrganizationId</span>(expectedOwner)<span class="op">;</span>
+        <span class="va">assert</span>.<span class="at">equal</span>(ownerId<span class="op">,</span> expectedId)<span class="op">;</span>
+        <span class="kw">let</span> length <span class="op">=</span> await <span class="va">instance</span>.<span class="at">getOrganizationsLength</span>()<span class="op">;</span>
+        <span class="va">assert</span>.<span class="at">equal</span>(length<span class="op">,</span> expectedLength)<span class="op">;</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/test/TestNonGovernmentalOrganizations.js">test/TestNonGovernmentalOrganizations.js</a></p>
+</section><section id="testear" class="slide level2">
+<h2><span class="header-section-number">7.6</span> Testear</h2>
+<ul>
+<li>Una vez creados los tests los lanzamos:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># testear</span>
+<span class="ex">truffle</span> test</code></pre></div>
+</section></section>
+<section><section id="creación-ui" class="titleslide slide level1"><h1><span class="header-section-number">8</span> Creación UI</h1></section><section id="truffle-boxes" class="slide level2">
+<h2><span class="header-section-number">8.1</span> Truffle boxes</h2>
+<ul>
+<li class="fragment"><a href="https://truffleframework.com/boxes">Truffle boxes</a> proporciona boilerplates para no tener que empezar a desarrollar ÐApps desde cero.</li>
+<li class="fragment">Hay para React, aunque yo soy más de Angular :-)</li>
+</ul>
+</section><section id="angular" class="slide level2">
+<h2><span class="header-section-number">8.2</span> Angular</h2>
+<ul>
+<li>Aunque la UI se puede hacer con otros frameworks yo he usado <a href="https://angular.io/">Angular</a> y <a href="https://material.angular.io/">Angular Material</a>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># instalar</span>
+<span class="ex">npm</span> install -g @angular/cli</code></pre></div>
+</section><section id="navegador" class="slide level2">
+<h2><span class="header-section-number">8.3</span> Navegador</h2>
+<ul>
+<li>Una vez instalado podemos verlo en <a href="http://localhost:4200/" class="uri">http://localhost:4200/</a> ejecutando:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># ejecutar</span>
+<span class="ex">ng</span> serve</code></pre></div>
+</section><section id="metamask" class="slide level2">
+<h2><span class="header-section-number">8.4</span> MetaMask</h2>
+<ul>
+<li class="fragment"><strong><a href="https://metamask.io/">MetaMask</a></strong>: es nodo ligero y wallet de Ethereum que permite ejecutar ÐApps en un navegador.</li>
+</ul>
+</section><section id="web3js" class="slide level2">
+<h2><span class="header-section-number">8.5</span> web3js</h2>
+<ul>
+<li class="fragment"><strong><a href="https://web3js.readthedocs.io/">web3js</a></strong>: es una librería de comunicación entre la interfaz de usuario y un nodo de Ethereum.</li>
+</ul>
+</section><section id="address-usuario" class="slide level2">
+<h2><span class="header-section-number">8.6</span> Address usuario</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">getUserAddress</span>() <span class="op">{</span>
+    <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="at">web3</span>) <span class="op">{</span>
+        <span class="kw">this</span>.<span class="va">messagesService</span>.<span class="at">sendErrorMessage</span>(<span class="st">&#39;Try MetaMask.&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="kw">this</span>.<span class="va">web3</span>.<span class="va">eth</span>.<span class="at">getAccounts</span>().<span class="at">then</span>(accounts <span class="op">=&gt;</span> <span class="op">{</span>
+        <span class="cf">if</span> (<span class="op">!</span>accounts <span class="op">||</span> <span class="va">accounts</span>.<span class="at">length</span> <span class="op">===</span> <span class="dv">0</span>) <span class="op">{</span>
+            <span class="kw">this</span>.<span class="va">messagesService</span>.<span class="at">sendErrorMessage</span>(<span class="st">&#39;No user accounts.&#39;</span>)<span class="op">;</span>
+        <span class="op">}</span>
+        <span class="cf">if</span> (<span class="va">StorageUtil</span>.<span class="at">getUserAddress</span>() <span class="op">!==</span> accounts[<span class="dv">0</span>]) <span class="op">{</span>
+            <span class="va">StorageUtil</span>.<span class="at">setUserAddress</span>(accounts[<span class="dv">0</span>])<span class="op">;</span>
+            <span class="kw">this</span>.<span class="va">messagesService</span>.<span class="at">sendNewUserAddressMessage</span>(accounts[<span class="dv">0</span>])<span class="op">;</span>
+        <span class="op">}</span>
+    <span class="op">}</span>).<span class="at">catch</span>(error <span class="op">=&gt;</span> <span class="op">{</span>
+        <span class="kw">this</span>.<span class="va">messagesService</span>.<span class="at">sendErrorMessage</span>(error)<span class="op">;</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+</section><section id="contract-instance" class="slide level2">
+<h2><span class="header-section-number">8.7</span> Contract instance</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">async <span class="at">getContractInstance</span>()<span class="op">:</span> Promise<span class="op">&lt;</span>any<span class="op">&gt;</span> <span class="op">{</span>
+    <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="at">web3</span>) <span class="op">{</span>
+        <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&#39;web3 server not found. Try MetaMask.&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="kw">const</span> ngoContract <span class="op">=</span> <span class="at">contract</span>(artifacts)<span class="op">;</span>
+    <span class="va">ngoContract</span>.<span class="at">setProvider</span>(<span class="kw">this</span>.<span class="va">web3</span>.<span class="at">currentProvider</span>)<span class="op">;</span>
+    <span class="cf">try</span> <span class="op">{</span>
+        <span class="kw">const</span> ngoInstance <span class="op">=</span> await <span class="va">ngoContract</span>.<span class="at">deployed</span>()<span class="op">;</span>
+        <span class="cf">return</span> ngoInstance<span class="op">;</span>
+    <span class="op">}</span> <span class="cf">catch</span> (error) <span class="op">{</span>
+        <span class="va">console</span>.<span class="at">log</span>(error)<span class="op">;</span>
+        <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&#39;Contract has not been deployed to network.&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/src/app/services/web3.service.ts">src/app/services/web3.service.ts</a></p>
+</section><section id="add-organisation" class="slide level2">
+<h2><span class="header-section-number">8.8</span> Add organisation</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">async <span class="at">add</span>(organization<span class="op">:</span> Organization)<span class="op">:</span> Promise<span class="op">&lt;</span>Organization<span class="op">&gt;</span> <span class="op">{</span>
+    <span class="kw">const</span> contractInstance <span class="op">=</span> await <span class="kw">this</span>.<span class="va">web3Service</span>.<span class="at">getContractInstance</span>()<span class="op">;</span>
+    <span class="kw">const</span> oldOrganization <span class="op">=</span> await <span class="kw">this</span>.<span class="at">getCurrentUserOrganizationAsOwner</span>()<span class="op">;</span>
+    <span class="cf">if</span> (oldOrganization) <span class="op">{</span>
+        <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&#39;The user is already owner of an organization.&#39;</span>)<span class="op">;</span>
+    <span class="op">}</span>
+    <span class="kw">const</span> transaction <span class="op">=</span> await <span class="va">contractInstance</span>.<span class="at">addOrganization</span>(
+        <span class="va">organization</span>.<span class="at">name</span><span class="op">,</span> <span class="op">{</span> <span class="dt">from</span><span class="op">:</span> <span class="kw">this</span>.<span class="at">senderAddress</span> <span class="op">}</span>)<span class="op">;</span>
+    <span class="kw">const</span> newOrganization <span class="op">=</span> <span class="kw">this</span>.<span class="at">_getOrganizationFromTransaction</span>(transaction)<span class="op">;</span>
+    <span class="kw">this</span>.<span class="va">organizations</span>.<span class="at">push</span>(newOrganization)<span class="op">;</span>
+    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;OrganizationService-&gt;add&#39;</span><span class="op">,</span> newOrganization)<span class="op">;</span>
+    <span class="cf">return</span> newOrganization<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+</section><section id="donation" class="slide level2">
+<h2><span class="header-section-number">8.9</span> Donation</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">async <span class="at">donation</span>(id<span class="op">:</span> number<span class="op">,</span> ethValue<span class="op">:</span> number)<span class="op">:</span> Promise<span class="op">&lt;</span>Donation<span class="op">&gt;</span> <span class="op">{</span>
+    <span class="kw">const</span> organization <span class="op">=</span> await <span class="kw">this</span>.<span class="at">getOne</span>(id)<span class="op">;</span>
+    <span class="kw">const</span> contractInstance <span class="op">=</span> await <span class="kw">this</span>.<span class="va">web3Service</span>.<span class="at">getContractInstance</span>()<span class="op">;</span>
+    <span class="kw">const</span> weiValue <span class="op">=</span> <span class="kw">this</span>.<span class="va">web3Service</span>.<span class="at">etherToWei</span>(<span class="va">ethValue</span>.<span class="at">toString</span>())<span class="op">;</span>
+    <span class="kw">const</span> transaction <span class="op">=</span> await <span class="va">contractInstance</span>.<span class="at">donation</span>(<span class="va">organization</span>.<span class="at">id</span><span class="op">,</span> 
+        <span class="op">{</span> <span class="dt">value</span><span class="op">:</span> weiValue<span class="op">,</span> <span class="dt">from</span><span class="op">:</span> <span class="kw">this</span>.<span class="at">senderAddress</span> <span class="op">}</span>)<span class="op">;</span>
+    <span class="kw">const</span> donation <span class="op">=</span> await <span class="kw">this</span>.<span class="at">_getDonationFromTransaction</span>(transaction)<span class="op">;</span>
+    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;OrganizationService-&gt;donation&#39;</span><span class="op">,</span> donation)<span class="op">;</span>
+    <span class="cf">return</span> donation<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+<p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/src/app/services/organizations.service.ts">src/app/services/organizations.service.ts</a></p>
+</section></section>
+<section><section id="subida-a-entornos-de-prueba" class="titleslide slide level1"><h1><span class="header-section-number">9</span> Subida a entornos de prueba</h1></section><section id="front" class="slide level2">
+<h2><span class="header-section-number">9.1</span> Front</h2>
+<ul>
+<li>Primero hacemos el build y luego desplegamos en un servidor web. Puede ser en <strong>GitHub Pages</strong>, u otro, pero siendo puristas habría que usar <a href="https://ipfs.io/">IPFS</a>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># empaquetar</span>
+<span class="ex">ng</span> build --prod</code></pre></div>
+</section><section id="infura" class="slide level2">
+<h2><span class="header-section-number">9.2</span> Infura</h2>
+<ul>
+<li class="fragment"><strong><a href="https://infura.io/">Infura</a></strong>: simplifica el despliegue de ÐApps en redes de prueba y en la red principal.</li>
+<li class="fragment">Te creas un usuario y te facilita un <strong>API Key</strong>.</li>
+</ul>
+</section><section id="rinkeby" class="slide level2">
+<h2><span class="header-section-number">9.3</span> Rinkeby</h2>
+<ul>
+<li class="fragment"><strong><a href="https://www.rinkeby.io/">Rinkeby</a></strong>: red de pruebas para probar ÐApps.</li>
+<li class="fragment">Mediante <strong>faucets</strong> consigues ETH de la red.</li>
+</ul>
+</section><section id="truffle.js" class="slide level2">
+<h2><span class="header-section-number">9.4</span> truffle.js</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> HDWalletProvider <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;truffle-hdwallet-provider&quot;</span>)<span class="op">;</span>
+<span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="op">{</span>
+  <span class="dt">networks</span><span class="op">:</span> <span class="op">{</span>
+    <span class="dt">rinkeby</span><span class="op">:</span> <span class="op">{</span>
+      <span class="dt">provider</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span>
+        <span class="kw">let</span> provider <span class="op">=</span> <span class="kw">new</span> <span class="at">HDWalletProvider</span>(
+          walletMmnemonic<span class="op">,</span>
+          <span class="st">&quot;https://rinkeby.infura.io/v3/&quot;</span> <span class="op">+</span> apiKey)<span class="op">;</span>
+        <span class="cf">return</span> provider<span class="op">;</span>
+      <span class="op">},</span>
+      <span class="dt">gas</span><span class="op">:</span> <span class="dv">7000001</span><span class="op">,</span>
+      <span class="dt">network_id</span><span class="op">:</span> <span class="dv">4</span>
+    <span class="op">}</span>
+  <span class="op">}</span>
+<span class="op">};</span></code></pre></div>
+<p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/truffle.js">truffle.js</a></p>
+</section><section id="migrar-a-rinkeby" class="slide level2">
+<h2><span class="header-section-number">9.5</span> Migrar a rinkeby</h2>
+<ul>
+<li>Para migrar a Rinkeby tenemos que usar la <strong>apiKey</strong> de Infura y una <strong>walletMmnemonic</strong> de una wallet con saldo suficiente en Rinkeby y ejecutar:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">truffle</span> migrate --network rinkeby</code></pre></div>
+</section></section>
+<section><section id="resumen-y-conclusiones" class="titleslide slide level1"><h1><span class="header-section-number">10</span> Resumen y conclusiones</h1></section><section id="resumen-teoría" class="slide level2">
+<h2><span class="header-section-number">10.1</span> Resumen teoría</h2>
+<ul>
+<li class="fragment"><strong>Bitcoin</strong> = dinero descentralizado.</li>
+<li class="fragment"><strong>Blockchain</strong> = cadena de bloques dificilmente falsificable.</li>
+<li class="fragment"><strong>Minado</strong> = geneación bloques con mecanismos de consenso.</li>
+<li class="fragment"><strong>Ethereum</strong> = blockchain pública permite ejecutar código y guardar datos.</li>
+<li class="fragment"><strong>Smart Contract</strong> = programa que se ejecuta en una blockchain.</li>
+<li class="fragment"><strong>ÐApp</strong> = aplicación que utiliza smart contracts.</li>
+</ul>
+</section><section id="resumen-práctica" class="slide level2">
+<h2><span class="header-section-number">10.2</span> Resumen práctica</h2>
+<p><img style="width:100%" src="../img/esquema-implementacion-dapp-4.png" alt="Resumen"/></p>
+</section><section id="conclusiones" class="slide level2">
+<h2><span class="header-section-number">10.3</span> ¿Conclusiones?</h2>
+<ul>
+<li class="fragment">Tecnologías nuevas, pero ya se pueden empezar a implantar los primeros proyectos en producción.</li>
+<li class="fragment">Tecnologías muy disruptivas por la descentralización y por la trazabilidad de los datos.</li>
+<li class="fragment">Problemas de escalabilidad y de volatilidad de precios.</li>
+</ul>
+</section></section>
+<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">11</span> Acerca de</h1></section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">11.1</span> Licencia</h2>
+<p><a href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Reconocimiento-CompartirIgual 3.0</a></p>
+</section><section id="fuentes" class="slide level2">
+<h2><span class="header-section-number">11.2</span> Fuentes</h2>
+<p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain">github.com/asanzdiego/codemotion-charla-blockchain</a></p>
+</section><section id="slides" class="slide level2">
+<h2><span class="header-section-number">11.3</span> Slides</h2>
+<p>Las slides están hechas con <strong><a href="https://github.com/markdownslides/markdownslides">MarkdownSlides</a></strong>.</p>
+</section></section>
+<section><section id="preguntas" class="titleslide slide level1"><h1><span class="header-section-number">12</span> Preguntas</h1></section></section>
+<section><section id="gracias" class="titleslide slide level1"><h1><span class="header-section-number">13</span> Gracias</h1></section></section>
+    </div>
+  </div>
+
+  <script src="../lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="../lib/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        pdfMaxPagesPerSlide: 1,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1024,
+        height: 576,
+        // Factor of the display size that should remain empty around the content
+        margin: 0.3,
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+        maxScale: 1.9,
+
+        menu: {
+            // Specifies which side of the presentation the menu will
+            // be shown. Use 'left' or 'right'.
+            side: 'left',
+
+            // Add slide numbers to the titles in the slide list.
+            // Use 'true' or format string (same as reveal.js slide numbers)
+            numbers: false,
+
+            // Specifies which slide elements will be used for generating
+            // the slide titles in the menu. The default selects the first
+            // heading element found in the slide, but you can specify any
+            // valid css selector and the text from the first matching
+            // element will be used.
+            // Note: that a section data-menu-title attribute or an element
+            // with a menu-title class will take precedence over this option
+            titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+            // Hide slides from the menu that do not have a title.
+            // Set to 'true' to only list slides with titles.
+            hideMissingTitles: false,
+
+            // Add markers to the slide titles to indicate the
+            // progress through the presentation
+            markers: false,
+
+            // Specify custom panels to be included in the menu, by
+            // providing an array of objects with 'title', 'icon'
+            // properties, and either a 'src' or 'content' property.
+            custom: false,
+
+            // Specifies the themes that will be available in the themes
+            // menu panel. Set to 'false' to hide themes panel.
+            themes: [
+                { name: 'Black', theme: '../lib/reveal.js/css/theme/black.css' },
+                { name: 'White', theme: '../lib/reveal.js/css/theme/white.css' },
+                { name: 'League', theme: '../lib/reveal.js/css/theme/league.css' },
+                { name: 'Sky', theme: '../lib/reveal.js/css/theme/sky.css' },
+                { name: 'Beige', theme: '../lib/reveal.js/css/theme/beige.css' },
+                { name: 'Simple', theme: '../lib/reveal.js/css/theme/simple.css' },
+                { name: 'Serif', theme: '../lib/reveal.js/css/theme/serif.css' },
+                { name: 'Blood', theme: '../lib/reveal.js/css/theme/blood.css' },
+                { name: 'Night', theme: '../lib/reveal.js/css/theme/night.css' },
+                { name: 'Moon', theme: '../lib/reveal.js/css/theme/moon.css' },
+                { name: 'Solarized', theme: '../lib/reveal.js/css/theme/solarized.css' }
+            ],
+
+            // Specifies if the transitions menu panel will be shown.
+            transitions: true,
+
+            // Adds a menu button to the slides to open the menu panel.
+            // Set to 'false' to hide the button.
+            openButton: true,
+
+            // If 'true' allows the slide number in the presentation to
+            // open the menu panel. The reveal.js slideNumber option must
+            // be displayed for this to take effect
+            openSlideNumber: false,
+
+            // If true allows the user to open and navigate the menu using
+            // the keyboard. Standard keyboard interaction with reveal
+            // will be disabled while the menu is open.
+            keyboard: true
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../lib/reveal.js/plugin/notes/notes.js', async: true },
+          //{ src: '../lib/reveal.js/plugin/search/search.js', async: true },
+          { src: '../lib/reveal.js-menu/menu.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

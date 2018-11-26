@@ -1,0 +1,42 @@
+<div class="app-flex-container">
+    <h2 class="app-sidenav-name">
+        User
+    </h2>
+</div>
+
+<mat-card *ngIf="error">
+    <div class="app-accent">{{error}}</div>
+</mat-card>
+
+<div *ngIf="!error">
+
+    <mat-card>
+        <div class="app-primary">Your user address is {{userAddress}}.</div>
+    </mat-card>
+
+    <br/>
+
+    <mat-card>
+        <div *ngIf="isLoadingOwner">
+            <mat-spinner></mat-spinner> Loading user organization as owner...
+        </div>
+
+        <div *ngIf="!isLoadingOwner">
+
+            <div *ngIf="organizationOwner">
+                <h3>You are the owner of the organization:</h3>
+                <app-organizations-table [organization]="organizationOwner"></app-organizations-table>
+            </div>
+
+            <div *ngIf="!organizationOwner">
+                <h3>You are not the owner of any organizations.</h3>
+                <a mat-raised-button color="accent" routerLink="/organization-add">
+                    <mat-icon aria-label="Add organization">add</mat-icon>
+                    Add organization
+                </a>
+            </div>
+
+        </div>
+    </mat-card>
+
+</div>
