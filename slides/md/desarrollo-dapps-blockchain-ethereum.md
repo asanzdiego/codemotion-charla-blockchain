@@ -35,7 +35,7 @@ Asesor. Desarrollador. Profesor. Formador.
 > 2. Descripción ÐApp
 > 3. Creación Smart Contracts
 > 4. Testing Smart Contracts
-> 5. Creación UI
+> 5. Creación Interfaz de Usuario
 > 6. Subida a entornos de prueba
 > 7. Resumen y conclusiones
 
@@ -320,7 +320,7 @@ truffle test
 
 
 
-# Creación UI
+# Creación Interfaz Usuario
 
 
 
@@ -510,7 +510,27 @@ truffle migrate --network rinkeby
 
 ## Resumen práctica
 
-<img style="width:100%" src="../img/esquema-implementacion-dapp-4.png" alt="Resumen"/>
+<img style="width:100%" src="../img/esquema-implementacion-dapp-1.png" alt="Creación de Smart Contracts"/>
+
+Creación de Smart Contracts
+
+## Resumen práctica
+
+<img style="width:100%" src="../img/esquema-implementacion-dapp-2.png" alt="Testing de Smart Contracts"/>
+
+Testing de Smart Contracts
+
+## Resumen práctica
+
+<img style="width:100%" src="../img/esquema-implementacion-dapp-3.png" alt="Creación de Interfaz de Usuario"/>
+
+Creación de Interfaz de Usuario
+
+## Resumen práctica
+
+<img style="width:100%" src="../img/esquema-implementacion-dapp-4.png" alt="Subida a entornos de prueba y producción"/>
+
+Subida a entornos de prueba y producción
 
 ## ¿Conclusiones?
 
