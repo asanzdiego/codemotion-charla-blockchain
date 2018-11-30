@@ -134,41 +134,35 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">in/asanzdiego</a></li>
 <li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/">slideshare.net/asanzdiego</a></li>
 </ul>
+</section><section id="disclaimer" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Disclaimer</h2>
+<ul>
+<li class="fragment">Mi intención con esta charla es dar unas pincelas para los que queréis empezar a desarrollar aplicaciones <strong>ahorraros muchas horas de trabajo</strong> de investigación.</li>
+<li class="fragment">Espero haberlo conseguido.</li>
+</ul>
 </section></section>
-<section><section id="indice" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Indice</h1></section><section id="qué-vamos-a-ver" class="slide level2">
-<h2><span class="header-section-number">3.1</span> ¿Qué vamos a ver?</h2>
-<ol type="1">
-<li class="fragment">Parte teorica</li>
-<li class="fragment">Descripción ÐApp</li>
-<li class="fragment">Creación Smart Contracts</li>
-<li class="fragment">Testing Smart Contracts</li>
-<li class="fragment">Creación Interfaz de Usuario</li>
-<li class="fragment">Subida a entornos de prueba</li>
-<li class="fragment">Resumen y conclusiones</li>
-</ol>
-</section></section>
-<section><section id="teoría" class="titleslide slide level1"><h1><span class="header-section-number">4</span> Teoría</h1></section><section id="qué-es-bitcoin" class="slide level2">
-<h2><span class="header-section-number">4.1</span> ¿Qué es Bitcoin?</h2>
+<section><section id="teoría" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Teoría</h1></section><section id="qué-es-bitcoin" class="slide level2">
+<h2><span class="header-section-number">3.1</span> ¿Qué es Bitcoin?</h2>
 <ul>
 <li class="fragment"><strong>Protocolo y red P2P</strong> = dinero digital.</li>
 <li class="fragment"><strong>Claves privadas</strong> = transferir fondos.</li>
 <li class="fragment"><strong>Descentralizado</strong> = no necesitan un tercero.</li>
 </ul>
 </section><section id="qué-es-blockchain" class="slide level2">
-<h2><span class="header-section-number">4.2</span> ¿Qué es Blockchain?</h2>
+<h2><span class="header-section-number">3.2</span> ¿Qué es Blockchain?</h2>
 <ul>
 <li class="fragment">Datos se guardan en <strong>cadena de bloques</strong> con información del anterior.</li>
 <li class="fragment"><strong>Histórico transacciones</strong> difícilmente falsificable.</li>
 <li class="fragment">Transacciones verificadas <strong>de forma descentralizada</strong> ¿cómo?</li>
 </ul>
 </section><section id="qué-es-el-minado" class="slide level2">
-<h2><span class="header-section-number">4.3</span> ¿Qué es el Minado?</h2>
+<h2><span class="header-section-number">3.3</span> ¿Qué es el Minado?</h2>
 <ul>
 <li class="fragment">Generación nuevos bloques.</li>
 <li class="fragment">Problema <strong>elegir el bloque correcto</strong> ¿cómo?</li>
 </ul>
 </section><section id="mecanismos-de-consenso" class="slide level2">
-<h2><span class="header-section-number">4.4</span> ¿Mecanismos de consenso?</h2>
+<h2><span class="header-section-number">3.4</span> ¿Mecanismos de consenso?</h2>
 <ul>
 <li class="fragment"><strong>Prueba de trabajo o PoW</strong> = recompensa al primer minero en resolver problema gasto computacional elevado, pero verificación inmediata.
 <ul>
@@ -180,21 +174,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul>
 </section><section id="tipos-de-blockchains" class="slide level2">
-<h2><span class="header-section-number">4.5</span> ¿Tipos de Blockchains?</h2>
+<h2><span class="header-section-number">3.5</span> ¿Tipos de Blockchains?</h2>
 <ul>
 <li class="fragment"><strong>públicas</strong>: cualquiera puede minar y las transacciones son públicas.</li>
 <li class="fragment"><strong>privadas</strong>: solo se puede minar por invitación y las transacciones solo las pueden ver los mineros.</li>
 <li class="fragment"><strong>mixtas</strong>: solo se puede minar por invitación pero las transacciones son públicas.</li>
 </ul>
 </section><section id="qué-es-ethereum" class="slide level2">
-<h2><span class="header-section-number">4.6</span> ¿Qué es Ethereum?</h2>
+<h2><span class="header-section-number">3.6</span> ¿Qué es Ethereum?</h2>
 <ul>
 <li class="fragment">Blockchain pública que <strong>ejecuta código y guarda datos</strong> de forma descentralizada.</li>
 <li class="fragment"><strong>Solidity</strong> = compila a bytecode interpreta Ethereum Virtual Machine (EVM).</li>
 <li class="fragment"><strong>Gas</strong> = coste ejecución en Ethers.</li>
 </ul>
 </section><section id="qué-es-un-smart-contract" class="slide level2">
-<h2><span class="header-section-number">4.7</span> ¿Qué es un Smart Contract?</h2>
+<h2><span class="header-section-number">3.7</span> ¿Qué es un Smart Contract?</h2>
 <ul>
 <li class="fragment">Programa informático en blockchain.
 <ul>
@@ -206,42 +200,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul>
 </section><section id="apps-tradicionales" class="slide level2">
-<h2><span class="header-section-number">4.8</span> ¿Apps tradicionales?</h2>
-<figure>
-<img src="../img/apps-vs-dapps-bn.png" alt="Apps" text-align="center" style="width:50.0%" /><figcaption>Apps</figcaption>
-</figure>
+<h2><span class="header-section-number">3.8</span> ¿Apps tradicionales?</h2>
+<p><img style="width:70%" src="../img/apps-vs-dapps-bn.png" alt="Apps tradicionales"/></p>
 </section><section id="apps-descentralizadas" class="slide level2">
-<h2><span class="header-section-number">4.9</span> ¿Apps descentralizadas?</h2>
-<figure>
-<img src="../img/apps-vs-dapps.png" alt="Apps VS ÐApps" text-align="center" style="width:50.0%" /><figcaption>Apps VS ÐApps</figcaption>
-</figure>
+<h2><span class="header-section-number">3.9</span> ¿Apps descentralizadas?</h2>
+<p><img style="width:70%" src="../img/apps-vs-dapps.png" alt="Apps tradicionales VS Apps descentralizadas"/></p>
 </section></section>
-<section><section id="descripción-ðapp" class="titleslide slide level1"><h1><span class="header-section-number">5</span> Descripción ÐApp</h1></section><section id="ðapp-de-donaciones-a-ong" class="slide level2">
-<h2><span class="header-section-number">5.1</span> ÐApp de donaciones a ONG</h2>
-<ul>
-<li class="fragment">Vamos a desarrollar una ÐApp para gestionar donaciones a ONG con 2 tipos de usuarios:
-<ul>
-<li class="fragment"><strong>Propietarios</strong>: crea la ONG y recibe las donaciones.</li>
-<li class="fragment"><strong>Otros usuarios</strong>: realizan donaciones a las ONG.</li>
-</ul></li>
-</ul>
-</section><section id="casos-de-uso" class="slide level2">
-<h2><span class="header-section-number">5.2</span> Casos de uso</h2>
-<figure>
-<img src="../img/dapp-de-donaciones-a-ONG.png" text-align="center" style="width:50.0%" />
-</figure>
-</section><section id="demo-rinkeby" class="slide level2">
-<h2><span class="header-section-number">5.3</span> Demo (Rinkeby)</h2>
-<ul>
-<li class="fragment">El back desplegado en la <strong>red de pruebas</strong> de <a href="https://www.rinkeby.io/">Rinkeby</a>.</li>
-<li class="fragment">El front desplegado en <strong>GitHub Pages</strong> (siendo puristas habría que usar <a href="https://ipfs.io/">IPFS</a>).
-<ul>
-<li class="fragment"><a href="https://nongovernmentalorganizations.github.io" class="uri">https://nongovernmentalorganizations.github.io</a></li>
-</ul></li>
-</ul>
-</section></section>
-<section><section id="creación-smart-contracts" class="titleslide slide level1"><h1><span class="header-section-number">6</span> Creación Smart Contracts</h1></section><section id="entorno-de-desarrollo" class="slide level2">
-<h2><span class="header-section-number">6.1</span> ¿Entorno de desarrollo?</h2>
+<section><section id="creación-smart-contracts" class="titleslide slide level1"><h1><span class="header-section-number">4</span> Creación Smart Contracts</h1></section><section id="ðapp-de-donaciones-a-ong" class="slide level2">
+<h2><span class="header-section-number">4.1</span> ÐApp de donaciones a ONG</h2>
+<p><img style="width:60%" src="../img/dapp-de-donaciones-a-ONG.png" alt="Casos de uso de ÐApp de donaciones a ONG"/></p>
+</section><section id="entorno-de-desarrollo" class="slide level2">
+<h2><span class="header-section-number">4.2</span> ¿Entorno de desarrollo?</h2>
 <ul>
 <li class="fragment"><strong><a href="https://solidity-es.readthedocs.io/es/latest/">Solidity</a></strong>: lenguaje de programación.</li>
 <li class="fragment"><strong><a href="https://remix.ethereum.org/">Remix</a></strong>: IDE en un navegador.</li>
@@ -249,14 +218,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="fragment"><strong><a href="https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity">Plugin de Solidity de Juan Blanco</a></strong>: Plugin de Solidity para Visual Studio Code</li>
 </ul>
 </section><section id="cómo-guardar-datos" class="slide level2">
-<h2><span class="header-section-number">6.2</span> ¿Cómo guardar datos?</h2>
+<h2><span class="header-section-number">4.3</span> ¿Cómo guardar datos?</h2>
 <ul>
 <li class="fragment">Los datos se guardan en “structs” o <strong>estructuras</strong>.</li>
 <li class="fragment">Las estructuras de datos se guardan en <strong>arrays</strong>.</li>
 <li class="fragment">Para las relaciones se utilizan los <strong>mappings</strong>.</li>
 </ul>
 </section><section id="ejemplo" class="slide level2">
-<h2><span class="header-section-number">6.3</span> Ejemplo</h2>
+<h2><span class="header-section-number">4.4</span> Ejemplo</h2>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// Estructura</span>
 struct Organization <span class="op">{</span>
     uint id<span class="op">;</span>
@@ -270,14 +239,14 @@ Organization[] <span class="kw">public</span> organizations<span class="op">;</s
 <span class="co">// Mapping</span>
 <span class="at">mapping</span>(address <span class="op">=&gt;</span> uint) <span class="kw">public</span> ownerToOrganizationId<span class="op">;</span></code></pre></div>
 </section><section id="otros-elementos" class="slide level2">
-<h2><span class="header-section-number">6.4</span> ¿Otros elementos?</h2>
+<h2><span class="header-section-number">4.5</span> ¿Otros elementos?</h2>
 <ul>
 <li class="fragment"><strong>constructores</strong> : solo se ejecutan cuando el contrato inteligente es desplegado en la blockchain.</li>
 <li class="fragment"><strong>eventos</strong>: permiten trazar lo que sucede en los contratos inteligentes.</li>
 <li class="fragment"><strong>modificadores personalizados</strong>: permiten hacer chequeos antes de ejecutar la lógica de una función.</li>
 </ul>
 </section><section id="ejemplo-1" class="slide level2">
-<h2><span class="header-section-number">6.5</span> Ejemplo</h2>
+<h2><span class="header-section-number">4.6</span> Ejemplo</h2>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// Constructor</span>
 <span class="at">constructor</span>() <span class="kw">public</span> <span class="op">{</span>
     <span class="co">// to fix problem with nulls</span>
@@ -295,7 +264,7 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
     _<span class="op">;</span>
 <span class="op">}</span></code></pre></div>
 </section><section id="modificadores-de-visibilidad" class="slide level2">
-<h2><span class="header-section-number">6.6</span> ¿Modificadores de visibilidad?</h2>
+<h2><span class="header-section-number">4.7</span> ¿Modificadores de visibilidad?</h2>
 <ul>
 <li class="fragment">Para variables de estado y para funciones:
 <ul>
@@ -306,7 +275,7 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
 </ul></li>
 </ul>
 </section><section id="otros-modificadores" class="slide level2">
-<h2><span class="header-section-number">6.7</span> ¿Otros modificadores?</h2>
+<h2><span class="header-section-number">4.8</span> ¿Otros modificadores?</h2>
 <ul>
 <li class="fragment">Para variables de estado:
 <ul>
@@ -320,7 +289,7 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
 </ul></li>
 </ul>
 </section><section id="ejemplo-2" class="slide level2">
-<h2><span class="header-section-number">6.8</span> Ejemplo</h2>
+<h2><span class="header-section-number">4.9</span> Ejemplo</h2>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">addOrganization</span>(string _name) external 
     <span class="at">ownerNotExists</span>() <span class="op">{</span>
     ...
@@ -339,7 +308,7 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
 <span class="op">}</span></code></pre></div>
 <p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/contracts/NonGovernmentalOrganizations.sol">contracts/NonGovernmentalOrganizations.sol</a></p>
 </section><section id="comentarios-generales" class="slide level2">
-<h2><span class="header-section-number">6.9</span> ¿Comentarios generales?</h2>
+<h2><span class="header-section-number">4.10</span> ¿Comentarios generales?</h2>
 <ul>
 <li class="fragment">Muchas limitaciones, por eso reducir la lógica al mínimo.</li>
 <li class="fragment">Los bucles están muy desaconsejados (gas), por eso se usan los mappings.</li>
@@ -347,8 +316,8 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
 <li class="fragment">Aspectos en proceso de mejora como tratamiento excepciones.</li>
 </ul>
 </section></section>
-<section><section id="testing-smart-contracts" class="titleslide slide level1"><h1><span class="header-section-number">7</span> Testing Smart Contracts</h1></section><section id="ganache" class="slide level2">
-<h2><span class="header-section-number">7.1</span> Ganache</h2>
+<section><section id="testing-smart-contracts" class="titleslide slide level1"><h1><span class="header-section-number">5</span> Testing Smart Contracts</h1></section><section id="ganache" class="slide level2">
+<h2><span class="header-section-number">5.1</span> Ganache</h2>
 <ul>
 <li><a href="https://truffleframework.com/ganache">Ganache</a> es un <strong>nodo privado</strong> para desarrollar y testear sin coste.</li>
 </ul>
@@ -357,28 +326,28 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># ejecutar</span>
 <span class="ex">ganache-cli</span> --gasLimit 7000001 --mnemonic <span class="st">&quot;</span><span class="va">$(</span><span class="fu">cat</span> wallet.mnemonic<span class="va">)</span><span class="st">&quot;</span></code></pre></div>
 </section><section id="truffle" class="slide level2">
-<h2><span class="header-section-number">7.2</span> Truffle</h2>
+<h2><span class="header-section-number">5.2</span> Truffle</h2>
 <ul>
 <li><a href="https://truffleframework.com/">Truffle</a> es un <strong>framework de desarrollo</strong> de smarts contracts de Ethreum.</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># instalar</span>
 <span class="ex">npm</span> install -g truffle</code></pre></div>
 </section><section id="compilar" class="slide level2">
-<h2><span class="header-section-number">7.3</span> Compilar</h2>
+<h2><span class="header-section-number">5.3</span> Compilar</h2>
 <ul>
 <li>Una vez creado los smarts contracts hay que compilarlos:</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># compilar</span>
 <span class="ex">truffle</span> compile</code></pre></div>
 </section><section id="migrar" class="slide level2">
-<h2><span class="header-section-number">7.4</span> Migrar</h2>
+<h2><span class="header-section-number">5.4</span> Migrar</h2>
 <ul>
 <li>Una vez levantado el nodo privado (Ganache) en una terminal independiente, tenemos que migrar los smarts contracts compilados:</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># migrar</span>
 <span class="ex">truffle</span> migrate</code></pre></div>
 </section><section id="tests" class="slide level2">
-<h2><span class="header-section-number">7.5</span> Tests</h2>
+<h2><span class="header-section-number">5.5</span> Tests</h2>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> NonGovernmentalOrganizations <span class="op">=</span> artifacts
     .<span class="at">require</span>(<span class="st">&quot;NonGovernmentalOrganizations&quot;</span>)<span class="op">;</span>
 <span class="at">contract</span>(<span class="st">&quot;NonGovernmentalOrganizations&quot;</span><span class="op">,</span> <span class="at">async</span> (accounts) <span class="op">=&gt;</span> <span class="op">{</span>
@@ -397,45 +366,38 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
 <span class="op">}</span>)<span class="op">;</span></code></pre></div>
 <p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/test/TestNonGovernmentalOrganizations.js">test/TestNonGovernmentalOrganizations.js</a></p>
 </section><section id="testear" class="slide level2">
-<h2><span class="header-section-number">7.6</span> Testear</h2>
+<h2><span class="header-section-number">5.6</span> Testear</h2>
 <ul>
 <li>Una vez creados los tests los lanzamos:</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># testear</span>
 <span class="ex">truffle</span> test</code></pre></div>
 </section></section>
-<section><section id="creación-interfaz-usuario" class="titleslide slide level1"><h1><span class="header-section-number">8</span> Creación Interfaz Usuario</h1></section><section id="truffle-boxes" class="slide level2">
-<h2><span class="header-section-number">8.1</span> Truffle boxes</h2>
+<section><section id="creación-interfaz-usuario" class="titleslide slide level1"><h1><span class="header-section-number">6</span> Creación Interfaz Usuario</h1></section><section id="truffle-boxes" class="slide level2">
+<h2><span class="header-section-number">6.1</span> Truffle boxes</h2>
 <ul>
 <li class="fragment"><a href="https://truffleframework.com/boxes">Truffle boxes</a> proporciona boilerplates para no tener que empezar a desarrollar ÐApps desde cero.</li>
 <li class="fragment">Hay para React, aunque yo soy más de Angular :-)</li>
 </ul>
 </section><section id="angular" class="slide level2">
-<h2><span class="header-section-number">8.2</span> Angular</h2>
+<h2><span class="header-section-number">6.2</span> Angular</h2>
 <ul>
 <li>Aunque la UI se puede hacer con otros frameworks yo he usado <a href="https://angular.io/">Angular</a> y <a href="https://material.angular.io/">Angular Material</a>.</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># instalar</span>
 <span class="ex">npm</span> install -g @angular/cli</code></pre></div>
-</section><section id="navegador" class="slide level2">
-<h2><span class="header-section-number">8.3</span> Navegador</h2>
-<ul>
-<li>Una vez instalado podemos verlo en <a href="http://localhost:4200/" class="uri">http://localhost:4200/</a> ejecutando:</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># ejecutar</span>
-<span class="ex">ng</span> serve</code></pre></div>
 </section><section id="metamask" class="slide level2">
-<h2><span class="header-section-number">8.4</span> MetaMask</h2>
+<h2><span class="header-section-number">6.3</span> MetaMask</h2>
 <ul>
 <li class="fragment"><strong><a href="https://metamask.io/">MetaMask</a></strong>: es nodo ligero y wallet de Ethereum que permite ejecutar ÐApps en un navegador.</li>
 </ul>
 </section><section id="web3js" class="slide level2">
-<h2><span class="header-section-number">8.5</span> web3js</h2>
+<h2><span class="header-section-number">6.4</span> web3js</h2>
 <ul>
 <li class="fragment"><strong><a href="https://web3js.readthedocs.io/">web3js</a></strong>: es una librería de comunicación entre la interfaz de usuario y un nodo de Ethereum.</li>
 </ul>
 </section><section id="address-usuario" class="slide level2">
-<h2><span class="header-section-number">8.6</span> Address usuario</h2>
+<h2><span class="header-section-number">6.5</span> Address usuario</h2>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">getUserAddress</span>() <span class="op">{</span>
     <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="at">web3</span>) <span class="op">{</span>
         <span class="kw">this</span>.<span class="va">messagesService</span>.<span class="at">sendErrorMessage</span>(<span class="st">&#39;Try MetaMask.&#39;</span>)<span class="op">;</span>
@@ -453,7 +415,7 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
     <span class="op">}</span>)<span class="op">;</span>
 <span class="op">}</span></code></pre></div>
 </section><section id="contract-instance" class="slide level2">
-<h2><span class="header-section-number">8.7</span> Contract instance</h2>
+<h2><span class="header-section-number">6.6</span> Contract instance</h2>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">async <span class="at">getContractInstance</span>()<span class="op">:</span> Promise<span class="op">&lt;</span>any<span class="op">&gt;</span> <span class="op">{</span>
     <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="at">web3</span>) <span class="op">{</span>
         <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&#39;web3 server not found. Try MetaMask.&#39;</span>)<span class="op">;</span>
@@ -470,7 +432,7 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
 <span class="op">}</span></code></pre></div>
 <p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/src/app/services/web3.service.ts">src/app/services/web3.service.ts</a></p>
 </section><section id="add-organisation" class="slide level2">
-<h2><span class="header-section-number">8.8</span> Add organisation</h2>
+<h2><span class="header-section-number">6.7</span> Add organisation</h2>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">async <span class="at">add</span>(organization<span class="op">:</span> Organization)<span class="op">:</span> Promise<span class="op">&lt;</span>Organization<span class="op">&gt;</span> <span class="op">{</span>
     <span class="kw">const</span> contractInstance <span class="op">=</span> await <span class="kw">this</span>.<span class="va">web3Service</span>.<span class="at">getContractInstance</span>()<span class="op">;</span>
     <span class="kw">const</span> oldOrganization <span class="op">=</span> await <span class="kw">this</span>.<span class="at">getCurrentUserOrganizationAsOwner</span>()<span class="op">;</span>
@@ -485,7 +447,7 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
     <span class="cf">return</span> newOrganization<span class="op">;</span>
 <span class="op">}</span></code></pre></div>
 </section><section id="donation" class="slide level2">
-<h2><span class="header-section-number">8.9</span> Donation</h2>
+<h2><span class="header-section-number">6.8</span> Donation</h2>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">async <span class="at">donation</span>(id<span class="op">:</span> number<span class="op">,</span> ethValue<span class="op">:</span> number)<span class="op">:</span> Promise<span class="op">&lt;</span>Donation<span class="op">&gt;</span> <span class="op">{</span>
     <span class="kw">const</span> organization <span class="op">=</span> await <span class="kw">this</span>.<span class="at">getOne</span>(id)<span class="op">;</span>
     <span class="kw">const</span> contractInstance <span class="op">=</span> await <span class="kw">this</span>.<span class="va">web3Service</span>.<span class="at">getContractInstance</span>()<span class="op">;</span>
@@ -497,28 +459,36 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
     <span class="cf">return</span> donation<span class="op">;</span>
 <span class="op">}</span></code></pre></div>
 <p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/src/app/services/organizations.service.ts">src/app/services/organizations.service.ts</a></p>
-</section></section>
-<section><section id="subida-a-entornos-de-prueba" class="titleslide slide level1"><h1><span class="header-section-number">9</span> Subida a entornos de prueba</h1></section><section id="front" class="slide level2">
-<h2><span class="header-section-number">9.1</span> Front</h2>
+</section><section id="navegador" class="slide level2">
+<h2><span class="header-section-number">6.9</span> Navegador</h2>
 <ul>
-<li>Primero hacemos el build y luego desplegamos en un servidor web. Puede ser en <strong>GitHub Pages</strong>, u otro, pero siendo puristas habría que usar <a href="https://ipfs.io/">IPFS</a>.</li>
+<li>Una vez desarrollada la UI podemos lanzar Angular y ver la aplicación en <a href="http://localhost:4200/" class="uri">http://localhost:4200/</a> ejecutando:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># ejecutar</span>
+<span class="ex">ng</span> serve</code></pre></div>
+</section></section>
+<section><section id="subida-a-entornos-de-prueba" class="titleslide slide level1"><h1><span class="header-section-number">7</span> Subida a entornos de prueba</h1></section><section id="front" class="slide level2">
+<h2><span class="header-section-number">7.1</span> Front</h2>
+<ul>
+<li><p>Primero hacemos el build y luego desplegamos en un servidor web. Puede ser en <strong>GitHub Pages</strong>, u otro, pero siendo puristas habría que usar <a href="https://ipfs.io/">IPFS</a>.</p></li>
+<li><p>Con Angular ejecutar:</p></li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># empaquetar</span>
 <span class="ex">ng</span> build --prod</code></pre></div>
 </section><section id="infura" class="slide level2">
-<h2><span class="header-section-number">9.2</span> Infura</h2>
+<h2><span class="header-section-number">7.2</span> Infura</h2>
 <ul>
 <li class="fragment"><strong><a href="https://infura.io/">Infura</a></strong>: simplifica el despliegue de ÐApps en redes de prueba y en la red principal.</li>
 <li class="fragment">Te creas un usuario y te facilita un <strong>API Key</strong>.</li>
 </ul>
 </section><section id="rinkeby" class="slide level2">
-<h2><span class="header-section-number">9.3</span> Rinkeby</h2>
+<h2><span class="header-section-number">7.3</span> Rinkeby</h2>
 <ul>
 <li class="fragment"><strong><a href="https://www.rinkeby.io/">Rinkeby</a></strong>: red de pruebas para probar ÐApps.</li>
 <li class="fragment">Mediante <strong>faucets</strong> consigues ETH de la red.</li>
 </ul>
 </section><section id="truffle.js" class="slide level2">
-<h2><span class="header-section-number">9.4</span> truffle.js</h2>
+<h2><span class="header-section-number">7.4</span> truffle.js</h2>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> HDWalletProvider <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;truffle-hdwallet-provider&quot;</span>)<span class="op">;</span>
 <span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="op">{</span>
   <span class="dt">networks</span><span class="op">:</span> <span class="op">{</span>
@@ -536,14 +506,26 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
 <span class="op">};</span></code></pre></div>
 <p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/truffle.js">truffle.js</a></p>
 </section><section id="migrar-a-rinkeby" class="slide level2">
-<h2><span class="header-section-number">9.5</span> Migrar a rinkeby</h2>
+<h2><span class="header-section-number">7.5</span> Migrar a rinkeby</h2>
 <ul>
 <li>Para migrar a Rinkeby tenemos que usar la <strong>apiKey</strong> de Infura y una <strong>walletMmnemonic</strong> de una wallet con saldo suficiente en Rinkeby y ejecutar:</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">truffle</span> migrate --network rinkeby</code></pre></div>
+</section><section id="demo-rinkeby" class="slide level2">
+<h2><span class="header-section-number">7.6</span> Demo (Rinkeby)</h2>
+<p><a href="https://nongovernmentalorganizations.github.io" class="uri">https://nongovernmentalorganizations.github.io</a></p>
 </section></section>
-<section><section id="resumen-y-conclusiones" class="titleslide slide level1"><h1><span class="header-section-number">10</span> Resumen y conclusiones</h1></section><section id="resumen-teoría" class="slide level2">
-<h2><span class="header-section-number">10.1</span> Resumen teoría</h2>
+<section><section id="resumen-y-conclusiones" class="titleslide slide level1"><h1><span class="header-section-number">8</span> Resumen y conclusiones</h1></section><section id="links-interesantes" class="slide level2">
+<h2><span class="header-section-number">8.1</span> Links interesantes</h2>
+<p><a href="https://bitcoinbook.info/wp-content/translations/es/book.pdf">Mastering Bitcoing</a></p>
+<p><a href="https://www.youtube.com/watch?v=zd5WOHF1kFM&amp;list=PLVR6_kyVYQd7z0CeV9xcy-gf6jKrO6cTP">Los videotutoriales de Nicolas Palacios sobre Solidity</a></p>
+<p><a href="https://cryptozombies.io/">El tutorial interactivo de CryptoZombies</a></p>
+<p><a href="https://truffleframework.com/tutorials/ethereum-overview">El tutorial “Ethereum Overview”</a></p>
+<p><a href="https://truffleframework.com/tutorials/pet-shop">El tutorial &quot;Ethereum Pet Shop&quot;</a></p>
+<p><a href="https://jbartual.wordpress.com/2018/01/25/truffle-testing-smart-contracts/">El tutorial &quot;Truffle testing Smart Contracts&quot;</a></p>
+<p><a href="https://gitter.im/ConsenSys/truffle">Pedir ayuda en el canal de Truffle del chat de Gitter</a></p>
+</section><section id="resumen-teoría" class="slide level2">
+<h2><span class="header-section-number">8.2</span> Resumen teoría</h2>
 <ul>
 <li class="fragment"><strong>Bitcoin</strong> = dinero descentralizado.</li>
 <li class="fragment"><strong>Blockchain</strong> = cadena de bloques dificilmente falsificable.</li>
@@ -553,41 +535,41 @@ modifier <span class="at">ownerNotExists</span>() <span class="op">{</span>
 <li class="fragment"><strong>ÐApp</strong> = aplicación que utiliza smart contracts.</li>
 </ul>
 </section><section id="resumen-práctica" class="slide level2">
-<h2><span class="header-section-number">10.2</span> Resumen práctica</h2>
+<h2><span class="header-section-number">8.3</span> Resumen práctica</h2>
 <p><img style="width:100%" src="../img/esquema-implementacion-dapp-1.png" alt="Creación de Smart Contracts"/></p>
 <p>Creación de Smart Contracts</p>
 </section><section id="resumen-práctica-1" class="slide level2">
-<h2><span class="header-section-number">10.3</span> Resumen práctica</h2>
+<h2><span class="header-section-number">8.4</span> Resumen práctica</h2>
 <p><img style="width:100%" src="../img/esquema-implementacion-dapp-2.png" alt="Testing de Smart Contracts"/></p>
 <p>Testing de Smart Contracts</p>
 </section><section id="resumen-práctica-2" class="slide level2">
-<h2><span class="header-section-number">10.4</span> Resumen práctica</h2>
+<h2><span class="header-section-number">8.5</span> Resumen práctica</h2>
 <p><img style="width:100%" src="../img/esquema-implementacion-dapp-3.png" alt="Creación de Interfaz de Usuario"/></p>
 <p>Creación de Interfaz de Usuario</p>
 </section><section id="resumen-práctica-3" class="slide level2">
-<h2><span class="header-section-number">10.5</span> Resumen práctica</h2>
+<h2><span class="header-section-number">8.6</span> Resumen práctica</h2>
 <p><img style="width:100%" src="../img/esquema-implementacion-dapp-4.png" alt="Subida a entornos de prueba y producción"/></p>
 <p>Subida a entornos de prueba y producción</p>
 </section><section id="conclusiones" class="slide level2">
-<h2><span class="header-section-number">10.6</span> ¿Conclusiones?</h2>
+<h2><span class="header-section-number">8.7</span> ¿Conclusiones?</h2>
 <ul>
 <li class="fragment">Tecnologías nuevas, pero ya se pueden empezar a implantar los primeros proyectos en producción.</li>
 <li class="fragment">Tecnologías muy disruptivas por la descentralización y por la trazabilidad de los datos.</li>
 <li class="fragment">Problemas de escalabilidad y de volatilidad de precios.</li>
 </ul>
 </section></section>
-<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">11</span> Acerca de</h1></section><section id="licencia" class="slide level2">
-<h2><span class="header-section-number">11.1</span> Licencia</h2>
+<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">9</span> Acerca de</h1></section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">9.1</span> Licencia</h2>
 <p><a href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Reconocimiento-CompartirIgual 3.0</a></p>
 </section><section id="fuentes" class="slide level2">
-<h2><span class="header-section-number">11.2</span> Fuentes</h2>
+<h2><span class="header-section-number">9.2</span> Fuentes</h2>
 <p><a href="https://github.com/asanzdiego/codemotion-charla-blockchain">github.com/asanzdiego/codemotion-charla-blockchain</a></p>
 </section><section id="slides" class="slide level2">
-<h2><span class="header-section-number">11.3</span> Slides</h2>
+<h2><span class="header-section-number">9.3</span> Slides</h2>
 <p>Las slides están hechas con <strong><a href="https://github.com/markdownslides/markdownslides">MarkdownSlides</a></strong>.</p>
 </section></section>
-<section><section id="preguntas" class="titleslide slide level1"><h1><span class="header-section-number">12</span> Preguntas</h1></section></section>
-<section><section id="gracias" class="titleslide slide level1"><h1><span class="header-section-number">13</span> Gracias</h1></section></section>
+<section><section id="preguntas" class="titleslide slide level1"><h1><span class="header-section-number">10</span> Preguntas</h1></section></section>
+<section><section id="gracias" class="titleslide slide level1"><h1><span class="header-section-number">11</span> Gracias</h1></section></section>
     </div>
   </div>
 

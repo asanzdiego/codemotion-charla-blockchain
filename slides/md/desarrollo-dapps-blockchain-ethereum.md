@@ -21,24 +21,10 @@ Asesor. Desarrollador. Profesor. Formador.
 - LinkedIn: [in/asanzdiego](http://www.linkedin.com/in/asanzdiego)
 - SlideShare: [slideshare.net/asanzdiego](http://www.slideshare.net/asanzdiego/)
 
+## Disclaimer
 
-
-
-# Indice
-
-
-
-
-## ¿Qué vamos a ver?
-
-> 1. Parte teorica
-> 2. Descripción ÐApp
-> 3. Creación Smart Contracts
-> 4. Testing Smart Contracts
-> 5. Creación Interfaz de Usuario
-> 6. Subida a entornos de prueba
-> 7. Resumen y conclusiones
-
+> - Mi intención con esta charla es dar unas pincelas para los que queréis empezar a desarrollar aplicaciones **ahorraros muchas horas de trabajo** de investigación.
+> - Espero haberlo conseguido.
 
 
 
@@ -94,35 +80,11 @@ Asesor. Desarrollador. Profesor. Formador.
 
 ## ¿Apps tradicionales?
 
-![Apps](../img/apps-vs-dapps-bn.png)
+<img style="width:70%" src="../img/apps-vs-dapps-bn.png" alt="Apps tradicionales"/>
 
 ## ¿Apps descentralizadas?
 
-![Apps VS ÐApps](../img/apps-vs-dapps.png)
-
-
-
-
-# Descripción ÐApp
-
-
-
-
-## ÐApp de donaciones a ONG
-
-> - Vamos a desarrollar una ÐApp para gestionar donaciones a ONG con 2 tipos de usuarios:
->       - **Propietarios**: crea la ONG y recibe las donaciones.
->       - **Otros usuarios**: realizan donaciones a las ONG.
-
-## Casos de uso
-
-![](../img/dapp-de-donaciones-a-ONG.png)
-
-## Demo (Rinkeby)
-
-> - El back desplegado en la **red de pruebas** de [Rinkeby](https://www.rinkeby.io/).
-> - El front desplegado en **GitHub Pages** (siendo puristas habría que usar [IPFS](https://ipfs.io/)).
->       - <https://nongovernmentalorganizations.github.io>
+<img style="width:70%" src="../img/apps-vs-dapps.png" alt="Apps tradicionales VS Apps descentralizadas"/>
 
 
 
@@ -131,6 +93,11 @@ Asesor. Desarrollador. Profesor. Formador.
 
 
 
+
+
+## ÐApp de donaciones a ONG
+
+<img style="width:60%" src="../img/dapp-de-donaciones-a-ONG.png" alt="Casos de uso de ÐApp de donaciones a ONG"/>
 
 ## ¿Entorno de desarrollo?
 
@@ -340,15 +307,6 @@ truffle test
 npm install -g @angular/cli
 ~~~
 
-## Navegador
-
-- Una vez instalado podemos verlo en <http://localhost:4200/> ejecutando:
-
-~~~{.bash}
-# ejecutar
-ng serve
-~~~
-
 ## MetaMask
 
 > - **[MetaMask](https://metamask.io/)**: es nodo ligero y wallet de Ethereum que permite ejecutar ÐApps en un navegador.
@@ -434,6 +392,15 @@ async donation(id: number, ethValue: number): Promise<Donation> {
 
 [src/app/services/organizations.service.ts](https://github.com/asanzdiego/codemotion-charla-blockchain/blob/master/src/app/services/organizations.service.ts)
 
+## Navegador
+
+- Una vez desarrollada la UI podemos lanzar Angular y ver la aplicación en <http://localhost:4200/> ejecutando:
+
+~~~{.bash}
+# ejecutar
+ng serve
+~~~
+
 
 
 
@@ -445,6 +412,8 @@ async donation(id: number, ethValue: number): Promise<Donation> {
 ## Front
 
 - Primero hacemos el build y luego desplegamos en un servidor web. Puede ser en **GitHub Pages**, u otro, pero siendo puristas habría que usar [IPFS](https://ipfs.io/).
+
+- Con Angular ejecutar:
 
 ~~~{.bash}
 # empaquetar
@@ -491,6 +460,9 @@ module.exports = {
 truffle migrate --network rinkeby
 ~~~
 
+## Demo (Rinkeby)
+
+<https://nongovernmentalorganizations.github.io>
 
 
 
@@ -498,6 +470,22 @@ truffle migrate --network rinkeby
 
 
 
+
+## Links interesantes
+
+[Mastering Bitcoing](https://bitcoinbook.info/wp-content/translations/es/book.pdf)
+
+[Los videotutoriales de Nicolas Palacios sobre Solidity](https://www.youtube.com/watch?v=zd5WOHF1kFM&list=PLVR6_kyVYQd7z0CeV9xcy-gf6jKrO6cTP)
+
+[El tutorial interactivo de CryptoZombies](https://cryptozombies.io/)
+
+[El tutorial “Ethereum Overview”](https://truffleframework.com/tutorials/ethereum-overview)
+
+[El tutorial "Ethereum Pet Shop"](https://truffleframework.com/tutorials/pet-shop)
+
+[El tutorial "Truffle testing Smart Contracts"](https://jbartual.wordpress.com/2018/01/25/truffle-testing-smart-contracts/)
+
+[Pedir ayuda en el canal de Truffle del chat de Gitter](https://gitter.im/ConsenSys/truffle)
 
 ## Resumen teoría
 

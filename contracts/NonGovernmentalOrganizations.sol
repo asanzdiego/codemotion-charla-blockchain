@@ -46,7 +46,6 @@ contract NonGovernmentalOrganizations {
         emit DonationSubmitted(_organizationId, organizations[_organizationId].owner, msg.sender, msg.value);
     }
 
-
     function getOrganizationsLength() external view returns(uint) {
 
         return organizations.length;
