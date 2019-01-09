@@ -10,6 +10,14 @@ Es una charla de 45 minutos en donde presento resumir todo lo que yo he aprendid
 
 ## Recursos
 
+### Vídeo de la charla
+
+[Vídeo de la charla](https://www.youtube.com/watch?v=P8W9YBqJnk0)
+
+<a href="https://www.youtube.com/watch?v=P8W9YBqJnk0">
+  <img src="./slides/img/video-sombra.png" alt="Vídeo de la charla"/>
+</a>
+
 ### Slides de la charla
 
 [Slides de la charla](https://asanzdiego.github.io/codemotion-charla-blockchain/)
