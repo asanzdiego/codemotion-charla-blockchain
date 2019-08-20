@@ -1,4 +1,4 @@
-# Cómo desarrollar aplicaciones descentralizadas en la Blockchain de Etheruem
+# Cómo desarrollar aplicaciones descentralizadas en la Blockchain de Ethereum
 
 En esta charla práctica y nada teórica (bueno un poco si), pretendo mostrar el código necesario para desarrollar una pequeña aplicación descentralizada ([ÐApps](https://en.wikipedia.org/wiki/Decentralized_application)) con un pequeño contrato inteligente ([Smart Contracts](https://en.wikipedia.org/wiki/Smart_contract)) en la Blockchain de [Ethereum](https://www.ethereum.org/).
 
@@ -95,7 +95,9 @@ ng serve
 
 ### Abrir la aplicación
 
-En un navegador con MetaMask instalado abrir: <http://localhost:4200/>
+En un navegador con MetaMask instalado abrir: <http://localhost:4200/>.
+
+Ejemplo en <https://nongovernmentalorganizations.github.io/>.
 
 ### Para desarrollar
 

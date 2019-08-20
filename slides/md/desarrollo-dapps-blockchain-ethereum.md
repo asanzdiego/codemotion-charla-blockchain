@@ -1,4 +1,4 @@
-% Cómo desarrollar aplicaciones descentralizadas en la Blockchain de Etheruem
+% Cómo desarrollar aplicaciones descentralizadas en la Blockchain de Ethereum
 % Adolfo Sanz De Diego
 % Codemotion 2018
 
